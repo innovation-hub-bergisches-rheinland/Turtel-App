@@ -3,10 +3,10 @@ import {StyleSheet, View, Text, TextInput, SafeAreaView, Alert} from 'react-nati
 import {InputOutline} from 'react-native-input-outline';
 import OwnButton from './TurtelButton.js';
 import DropDownPicker from 'react-native-dropdown-picker';
+import BackButton from '../images/back_button.jsx';
+import LogoHeader from '../images/logo_header.jsx';
+import HelpButton from '../images/help_button.jsx';
 import {Onboarding} from './Onboarding/Onboarding';
-
-
-
 
 export function  PhoneNumber({ navigation }) {
     const [open, setOpen] = useState(false);
@@ -54,6 +54,25 @@ const style = StyleSheet.create ( {
         alignItems: 'center',
         justifyContent: 'center',
         flex: 1,
+    },
+    backButton: {
+        bottom: "22%",
+        right: "38%",
+        shadowColor: '#000000',
+        shadowOffset: {width: 3, height: 3},
+        shadowOpacity: 0.2,
+        shadowRadius: 2,
+    },
+    logoHeader: {
+        bottom: "28%",
+    },
+    helpButton: {
+        bottom: "34%",
+        left: "38%",
+        shadowColor: '#000000',
+        shadowOffset: {width: 3, height: 3},
+        shadowOpacity: 0.2,
+        shadowRadius: 2,
     },
     input: {
         height: 52,
