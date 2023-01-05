@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/fweil/RiderProjects/Turtel-App/Turtel-Test/Turtel-Test.csproj": {}
+    "C:\\Users\\Admin\\Documents\\GitHub\\Turtel-App\\Turtel-Test\\Turtel-Test.csproj": {}
   },
   "projects": {
-    "/Users/fweil/RiderProjects/Turtel-App/Turtel-App/Turtel-App.csproj": {
+    "C:\\Users\\Admin\\Documents\\GitHub\\Turtel-App\\Turtel-App\\Turtel-App.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/fweil/RiderProjects/Turtel-App/Turtel-App/Turtel-App.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Documents\\GitHub\\Turtel-App\\Turtel-App\\Turtel-App.csproj",
         "projectName": "Turtel-App",
-        "projectPath": "/Users/fweil/RiderProjects/Turtel-App/Turtel-App/Turtel-App.csproj",
-        "packagesPath": "/Users/fweil/.nuget/packages/",
-        "outputPath": "/Users/fweil/RiderProjects/Turtel-App/Turtel-App/obj/",
+        "projectPath": "C:\\Users\\Admin\\Documents\\GitHub\\Turtel-App\\Turtel-App\\Turtel-App.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Documents\\GitHub\\Turtel-App\\Turtel-App\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/fweil/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -66,6 +66,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.12, 6.0.12]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[6.0.12, 6.0.12]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.12, 6.0.12]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.12, 6.0.12]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -74,21 +92,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.100/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\Admin\\.dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/fweil/RiderProjects/Turtel-App/Turtel-Test/Turtel-Test.csproj": {
+    "C:\\Users\\Admin\\Documents\\GitHub\\Turtel-App\\Turtel-Test\\Turtel-Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/fweil/RiderProjects/Turtel-App/Turtel-Test/Turtel-Test.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Documents\\GitHub\\Turtel-App\\Turtel-Test\\Turtel-Test.csproj",
         "projectName": "Turtel-Test",
-        "projectPath": "/Users/fweil/RiderProjects/Turtel-App/Turtel-Test/Turtel-Test.csproj",
-        "packagesPath": "/Users/fweil/.nuget/packages/",
-        "outputPath": "/Users/fweil/RiderProjects/Turtel-App/Turtel-Test/obj/",
+        "projectPath": "C:\\Users\\Admin\\Documents\\GitHub\\Turtel-App\\Turtel-Test\\Turtel-Test.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Documents\\GitHub\\Turtel-App\\Turtel-Test\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/fweil/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -100,8 +118,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/Users/fweil/RiderProjects/Turtel-App/Turtel-App/Turtel-App.csproj": {
-                "projectPath": "/Users/fweil/RiderProjects/Turtel-App/Turtel-App/Turtel-App.csproj"
+              "C:\\Users\\Admin\\Documents\\GitHub\\Turtel-App\\Turtel-App\\Turtel-App.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Documents\\GitHub\\Turtel-App\\Turtel-App\\Turtel-App.csproj"
               }
             }
           }
@@ -148,12 +166,26 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.12, 6.0.12]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.12, 6.0.12]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.12, 6.0.12]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.100/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\Admin\\.dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

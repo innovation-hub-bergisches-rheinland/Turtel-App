@@ -7499,19 +7499,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/fweil/.nuget/packages/": {}
+    "C:\\Users\\Admin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/fweil/RiderProjects/Turtel-App/Turtel-Test/Turtel-Test.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\Documents\\GitHub\\Turtel-App\\Turtel-Test\\Turtel-Test.csproj",
       "projectName": "Turtel-Test",
-      "projectPath": "/Users/fweil/RiderProjects/Turtel-App/Turtel-Test/Turtel-Test.csproj",
-      "packagesPath": "/Users/fweil/.nuget/packages/",
-      "outputPath": "/Users/fweil/RiderProjects/Turtel-App/Turtel-Test/obj/",
+      "projectPath": "C:\\Users\\Admin\\Documents\\GitHub\\Turtel-App\\Turtel-Test\\Turtel-Test.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Admin\\Documents\\GitHub\\Turtel-App\\Turtel-Test\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/fweil/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -7523,8 +7523,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "/Users/fweil/RiderProjects/Turtel-App/Turtel-App/Turtel-App.csproj": {
-              "projectPath": "/Users/fweil/RiderProjects/Turtel-App/Turtel-App/Turtel-App.csproj"
+            "C:\\Users\\Admin\\Documents\\GitHub\\Turtel-App\\Turtel-App\\Turtel-App.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Documents\\GitHub\\Turtel-App\\Turtel-App\\Turtel-App.csproj"
             }
           }
         }
@@ -7571,12 +7571,26 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[6.0.12, 6.0.12]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[6.0.12, 6.0.12]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[6.0.12, 6.0.12]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.100/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\Admin\\.dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   },
@@ -7585,7 +7599,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Das Paket \"Microsoft.AspNet.WebApi.Core 5.2.9\" wurde nicht mit dem Projektzielframework \"net6.0\", sondern mit \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" wiederhergestellt. Dieses Paket ist mit Ihrem Projekt möglicherweise nicht vollständig kompatibel.",
+      "message": "Package 'Microsoft.AspNet.WebApi.Core 5.2.9' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
       "libraryId": "Microsoft.AspNet.WebApi.Core",
       "targetGraphs": [
         "net6.0"
@@ -7594,7 +7608,7 @@
     {
       "code": "NU1605",
       "level": "Error",
-      "message": "Ein Downgrade des Pakets \"Microsoft.EntityFrameworkCore\" von 7.0.1 auf 7.0.0 wurde festgestellt. Verweisen Sie direkt aus dem Projekt auf das Paket, um eine andere Version auszuwählen. \n Turtel-Test -> Turtel-App -> Microsoft.EntityFrameworkCore (>= 7.0.1) \n Turtel-Test -> Microsoft.EntityFrameworkCore (>= 7.0.0)",
+      "message": "Detected package downgrade: Microsoft.EntityFrameworkCore from 7.0.1 to 7.0.0. Reference the package directly from the project to select a different version. \r\n Turtel-Test -> Turtel-App -> Microsoft.EntityFrameworkCore (>= 7.0.1) \r\n Turtel-Test -> Microsoft.EntityFrameworkCore (>= 7.0.0)",
       "libraryId": "Microsoft.EntityFrameworkCore",
       "targetGraphs": [
         "net6.0"
