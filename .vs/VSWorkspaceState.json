@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Turtel-App",
+    "\\Turtel-Test"
   ],
-  "SelectedNode": "\\Turtel-App.sln",
+  "SelectedNode": "\\Turtel-Test\\Validation.cs",
   "PreviewInSolutionExplorer": false
 }

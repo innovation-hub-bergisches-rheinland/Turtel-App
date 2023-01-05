@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Jack5\\source\\repos\\Turtel-App\\Turtel-Test\\Turtel-Test.csproj": {}
+    "C:\\Users\\pixel\\source\\repos\\Turtel-App\\Turtel-Test\\Turtel-Test.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Jack5\\source\\repos\\Turtel-App\\Turtel-App\\Turtel-App.csproj": {
+    "C:\\Users\\pixel\\source\\repos\\Turtel-App\\Turtel-App\\Turtel-App.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jack5\\source\\repos\\Turtel-App\\Turtel-App\\Turtel-App.csproj",
+        "projectUniqueName": "C:\\Users\\pixel\\source\\repos\\Turtel-App\\Turtel-App\\Turtel-App.csproj",
         "projectName": "Turtel-App",
-        "projectPath": "C:\\Users\\Jack5\\source\\repos\\Turtel-App\\Turtel-App\\Turtel-App.csproj",
-        "packagesPath": "C:\\Users\\Jack5\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jack5\\source\\repos\\Turtel-App\\Turtel-App\\obj\\",
+        "projectPath": "C:\\Users\\pixel\\source\\repos\\Turtel-App\\Turtel-App\\Turtel-App.csproj",
+        "packagesPath": "C:\\Users\\pixel\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pixel\\source\\repos\\Turtel-App\\Turtel-App\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Jack5\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\pixel\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,6 +40,22 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "GraphQL": {
+              "target": "Package",
+              "version": "[7.2.2, )"
+            },
+            "GraphQL.Server.Transports.AspNetCore": {
+              "target": "Package",
+              "version": "[7.2.0, )"
+            },
+            "GraphQL.Server.Ui.Altair": {
+              "target": "Package",
+              "version": "[7.2.0, )"
+            },
+            "GraphQL.SystemTextJson": {
+              "target": "Package",
+              "version": "[7.2.2, )"
+            },
             "Microsoft.AspNet.WebApi.Core": {
               "target": "Package",
               "version": "[5.2.9, )"
@@ -63,7 +79,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -75,21 +92,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Jack5\\source\\repos\\Turtel-App\\Turtel-Test\\Turtel-Test.csproj": {
+    "C:\\Users\\pixel\\source\\repos\\Turtel-App\\Turtel-Test\\Turtel-Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jack5\\source\\repos\\Turtel-App\\Turtel-Test\\Turtel-Test.csproj",
+        "projectUniqueName": "C:\\Users\\pixel\\source\\repos\\Turtel-App\\Turtel-Test\\Turtel-Test.csproj",
         "projectName": "Turtel-Test",
-        "projectPath": "C:\\Users\\Jack5\\source\\repos\\Turtel-App\\Turtel-Test\\Turtel-Test.csproj",
-        "packagesPath": "C:\\Users\\Jack5\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jack5\\source\\repos\\Turtel-App\\Turtel-Test\\obj\\",
+        "projectPath": "C:\\Users\\pixel\\source\\repos\\Turtel-App\\Turtel-Test\\Turtel-Test.csproj",
+        "packagesPath": "C:\\Users\\pixel\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pixel\\source\\repos\\Turtel-App\\Turtel-Test\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Jack5\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\pixel\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -103,8 +120,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Jack5\\source\\repos\\Turtel-App\\Turtel-App\\Turtel-App.csproj": {
-                "projectPath": "C:\\Users\\Jack5\\source\\repos\\Turtel-App\\Turtel-App\\Turtel-App.csproj"
+              "C:\\Users\\pixel\\source\\repos\\Turtel-App\\Turtel-App\\Turtel-App.csproj": {
+                "projectPath": "C:\\Users\\pixel\\source\\repos\\Turtel-App\\Turtel-App\\Turtel-App.csproj"
               }
             }
           }
@@ -146,7 +163,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -155,7 +173,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
