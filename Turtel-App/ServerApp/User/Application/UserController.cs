@@ -2,9 +2,16 @@
 
 namespace Turtel_App.ServerApp.User.Application
 {
-    public class UserController : Controller
+    [ApiController]
+    [Route("[controller]")]
+    public class UserController : ControllerBase
     {
 
+        [HttpGet("/api/user/getHelloWorld")]
+        public IActionResult HelloWorld()
+        {
+            return this.Ok(new JsonResult("hello world"));
+        }
 
         [HttpPost("/api/user/createValidateEmailRequest")]
         public IActionResult CreateValidateEmailRequest([FromBody]string email)
