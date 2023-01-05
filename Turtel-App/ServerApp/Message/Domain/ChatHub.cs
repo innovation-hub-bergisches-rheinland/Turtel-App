@@ -20,7 +20,7 @@ public class ChatHub : Hub
             }
 
             // Send the message to the recipient.
-            Clients.User(receiver).send(sender, message);
+            // Clients.User(receiver).send(sender, message);
         }
 }
 // Zweiter ansatz

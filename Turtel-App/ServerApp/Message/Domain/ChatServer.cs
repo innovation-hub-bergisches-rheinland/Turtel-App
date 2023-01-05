@@ -62,8 +62,8 @@ public class ChatServer
                     ChatContext.Message msg = new ChatContext.Message
                     {
                         Text = message,
-                        SenderId = Guid.Parse(senderGuid), ///hier werden die ID von Sender und Empfänger benötigt diese müssen übergeben werden wenn der button ausgelöst wird
-                        Receiver = Guid.Parse(receiverGuid)
+                        // SenderId = Guid.Parse(senderGuid), ///hier werden die ID von Sender und Empfänger benötigt diese müssen übergeben werden wenn der button ausgelöst wird
+                        // Receiver = Guid.Parse(receiverGuid)
                     };
                     context.Messages.Add(msg);
                     context.SaveChanges();

@@ -5,11 +5,7 @@ namespace Turtel_App.ServerApp.Message.Application
 {
     public class MessageController : Controller
     {
-        private readonly MessageRepository _messageRepository;
-
-        public MessageController(MessageRepository messageRepository){
-        
-            _messageRepository = messageRepository;
+        public MessageController(){
         }
 
         // // GET: api/message
@@ -23,7 +19,9 @@ namespace Turtel_App.ServerApp.Message.Application
         [HttpGet("{id}")]
         public async Task<ActionResult<ChatContext.Message>> GetMessage(Guid id)
         {
-            var message = await new Task<ChatContext.Message?>( () => _messageRepository.findByReceiverId(id));
+            using var messageRepository = new MessageRepository();
+
+            var message = await new Task<ChatContext.Message?>( () => messageRepository.findByReceiverId(id));
             if (message == null)
             {
                 return NotFound();
@@ -35,7 +33,9 @@ namespace Turtel_App.ServerApp.Message.Application
         [HttpPost]
         public async Task<ActionResult<ChatContext.Message>> PostMessage(ChatContext.Message message)
         {
-            await _messageRepository.AddAsync(message);
+            using var messageRepository = new MessageRepository();
+
+            await messageRepository.AddAsync(message);
             return CreatedAtAction("GetMessage", new { id = message.Id }, message);
         }
 
