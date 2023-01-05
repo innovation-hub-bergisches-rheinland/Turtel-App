@@ -17,11 +17,6 @@ export function  PhoneNumber({ navigation }) {
         
     ]);   
     const [phoneNumber, setPhoneNumber] = useState(null);
-    const handleInput = event => {
-        setPhoneNumber(event.target.value);
-        console.log("Phonenumber: " + phoneNumber)
-    }
-
 
     const onPressForward = () => {
         console.log(areacode + phoneNumber)
@@ -45,6 +40,7 @@ export function  PhoneNumber({ navigation }) {
                 setItems={setItems}
                 style={style.input}
             />
+            
             <InputOutline placeholder='Handynummer' style={style.input} onChangeText={newText => setPhoneNumber(newText)}/>
             <Text style={style.textStyle}>Wir brauchen Deine Telefonnummer, um dich anzumelden.</Text>
             <OwnButton name="Weiter" onPress={() => onPressForward()} />

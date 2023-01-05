@@ -13,10 +13,12 @@ const Stack = createNativeStackNavigator();
 export default class App extends Component {
   static displayName = App.name;
 
+  
+
   render () {
     return (
       <NavigationContainer>
-        <Stack.Navigator screenOptions={{headerShown: true}}>
+        <Stack.Navigator screenOptions={{headerShown: true}} initialRouteName='Onboarding'>
           <Stack.Screen name="Register" component={Register} options={{ headerShown: false }}/>
           <Stack.Screen name="PhoneNumber" component={PhoneNumber} options={{ headerShown: false }}/>
           <Stack.Screen name="Onboarding" component={Onboarding} options={{ headerShown: false }}/>
