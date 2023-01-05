@@ -1,18 +1,51 @@
-import React,{Component} from 'react';
-import './Header.css';
-import logo from '../images/logo2.svg';
-import help from '../images/taube_help.svg';
+import React, { Component } from 'react';
+import {StyleSheet, Text, Pressable, SafeAreaView, View, DrawerLayoutAndroid} from 'react-native';
+import BackButton from '../images/back_button.jsx';
+import LogoHeader from '../images/logo_header.jsx';
+import HelpButton from '../images/help_button.jsx'; 
 
+export default function Header(props) {
+    return ( 
+        <SafeAreaView style={style.headerContainer}>
+            <Pressable onPress={props.onPressBack}>
+                <View style={style.backButton}>
+                    <BackButton />
+                </View>
+            </Pressable>
+            <View style={style.logoHeader}>
+                <LogoHeader />
+            </View>
+            <Pressable onPress={props.onPressHelp}>
+                <View style={style.helpButton}>
+                    <HelpButton />
+                 </View>
+            </Pressable>
+        </SafeAreaView>
+    );
+}
 
-export class Header extends Component {
-    
-    render () {
-      return (
-        <header className='header'>
-            <img src={logo} alt='logo' id='logo'/>
-            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src={help} alt='help' id='help'/></a>
-        </header>
-      );
+const style = StyleSheet.create({
+    headerContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        
+    },
+    backButton: {
+        marginLeft: 10,
+        shadowColor: '#000',
+        shadowOffset: {width: 3, height: 3},
+        shadowOpacity: 0.2,
+        shadowRadius: 2,
+    },
+    helpButton: {
+        marginRight: 10,
+        shadowColor: '#000',
+        shadowOffset: {width: 3, height: 3},
+        shadowOpacity: 0.2,
+        shadowRadius: 2,
+    },
+    logoHeader:  {
+        
     }
-  }
-  
+});
