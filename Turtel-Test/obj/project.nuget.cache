@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "Yi+mx0KBJCjgosayF7ICgAg/nZzj/FiQUDdqqzrTW3/mB03xryr+jMqd6XU4EK9z8+CPOglfnD0ker/IoOoXxQ==",
+  "dgSpecHash": "GYf1FDVHIpMQJKykZP2kxYdMA6Ddjo2wwbiRF6DkQojQPhzor56CqZVvvGC2FyQlG7Uv9sv5koFA7klyoJCFLA==",
   "success": true,
   "projectFilePath": "C:\\Users\\pixel\\source\\repos\\Turtel-App\\Turtel-Test\\Turtel-Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pixel\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
+    "C:\\Users\\pixel\\.nuget\\packages\\geolocation\\1.2.1\\geolocation.1.2.1.nupkg.sha512",
     "C:\\Users\\pixel\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.9\\microsoft.aspnet.webapi.client.5.2.9.nupkg.sha512",
     "C:\\Users\\pixel\\.nuget\\packages\\microsoft.aspnet.webapi.core\\5.2.9\\microsoft.aspnet.webapi.core.5.2.9.nupkg.sha512",
     "C:\\Users\\pixel\\.nuget\\packages\\microsoft.aspnetcore.spaproxy\\6.0.5\\microsoft.aspnetcore.spaproxy.6.0.5.nupkg.sha512",

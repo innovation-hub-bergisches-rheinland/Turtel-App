@@ -10,9 +10,10 @@ namespace Turtel_App.ServerApp.Matching.Domain
         public Guid GuidId { get; set; }
         [Key]
         [Required]
-        public ICollection<User.Domain.User> Matches { get; set; }
+        public User.Domain.User Matches { get; set; }
         [Key]
         [Required]
         public User.Domain.User User { get; set; }
+        public double Distance { get; set; }
     }
 }
