@@ -1,20 +1,31 @@
 import React, {useState} from 'react';
-import {StyleSheet, View, Text, TextInput, SafeAreaView} from 'react-native';
+import {StyleSheet, View, Text, TextInput, SafeAreaView, Alert} from 'react-native';
 import {InputOutline} from 'react-native-input-outline';
 import OwnButton from './TurtelButton.js';
 import DropDownPicker from 'react-native-dropdown-picker';
 import BackButton from '../images/back_button.jsx';
 import LogoHeader from '../images/logo_header.jsx';
 import HelpButton from '../images/help_button.jsx';
+import {Onboarding} from './Onboarding/Onboarding';
 
 export function  PhoneNumber({ navigation }) {
     const [open, setOpen] = useState(false);
-    const [value, setValue] = useState(null);
+    const [areacode, setAreacode] = useState(null);
     const [items, setItems] = useState([
         {label: 'Dänemark (+45)', value: '+45'},
         {label: 'Deutschland (+49)', value: '+49'},
         
-    ]);
+    ]);   
+    const [phoneNumber, setPhoneNumber] = useState(null);
+
+    const onPressForward = () => {
+        console.log(areacode + phoneNumber)
+        if(areacode == null || phoneNumber == null) {
+            Alert.alert("Achtung! Du musst eine Eingabe tätigen!")
+        } else {
+            navigation.navigate(Onboarding)
+        }
+    }
 
     return (
         <SafeAreaView style={style.phoneNumberPageStyle}>
@@ -22,16 +33,17 @@ export function  PhoneNumber({ navigation }) {
                 placeholder='Vorwahl'
                 open={open}
                 dropDownContainerStyle={style.containerStyle}
-                value={value}
+                value={areacode}
                 items={items}
                 setOpen={setOpen}
-                setValue={setValue}
+                setValue={setAreacode}
                 setItems={setItems}
                 style={style.input}
             />
-            <InputOutline placeholder='Handynummer' style={style.input} fontColor="#4C4C4C"/>
+            
+            <InputOutline placeholder='Handynummer' style={style.input} onChangeText={newText => setPhoneNumber(newText)}/>
             <Text style={style.textStyle}>Wir brauchen Deine Telefonnummer, um dich anzumelden.</Text>
-            <OwnButton name="Weiter" />
+            <OwnButton name="Weiter" onPress={() => onPressForward()} />
         </SafeAreaView>
         
     );
@@ -68,7 +80,7 @@ const style = StyleSheet.create ( {
         margin: 12,
         borderWidth: 1,
         borderRadius: 25,
-        borderColor: '#4C4C4C',
+        borderColor: '#000',
         justifyContent: 'center',
         alignSelf: 'center',
     },
