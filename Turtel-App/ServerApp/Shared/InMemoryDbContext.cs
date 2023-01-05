@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace Turtel_App.ServerApp.Certification
+namespace Turtel_App.ServerApp.Shared
 {
 
     public abstract class InMemoryDbContext : DbContext

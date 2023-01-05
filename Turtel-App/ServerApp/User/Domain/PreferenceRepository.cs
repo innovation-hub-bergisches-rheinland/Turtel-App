@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Turtel_App.ServerApp.Certification;
+using Turtel_App.ServerApp.Shared;
 
 namespace Turtel_App.ServerApp.User.Domain
 {

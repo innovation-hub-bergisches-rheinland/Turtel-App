@@ -2,7 +2,7 @@
 
 namespace Turtel_App.ServerApp.Feedback.Domain
 {
-    public class FeedbackRepository : ServerApp.Certification.InMemoryDbContext
+    public class FeedbackRepository : ServerApp.Shared.InMemoryDbContext
     {
         public FeedbackRepository() : base()
         {
