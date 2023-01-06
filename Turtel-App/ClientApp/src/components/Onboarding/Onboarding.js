@@ -7,6 +7,10 @@ import * as ImagePicker from 'expo-image-picker';
 import OwnCheckButton from '../TurtelCheckButton';
 
 export function  Onboarding({ navigation }) {
+    const [errorName, setErrorName] = useState(undefined);
+    const [errorBirthday, setErrorBirthday] = useState(undefined);
+
+
     const [name, setName] = useState(null);
     const [birthday, setBirthday] = useState(null);
     const [image, setImage] = useState(null);
@@ -36,9 +40,14 @@ export function  Onboarding({ navigation }) {
 
     const checkInputs = () => {
         console.log("Name: " + name + ", Birthday: " + birthday + ", Gender: " + gender);
-        if(birthday === null | name === null | gender === null | image === null) {
-            Alert.alert("Eine Eingabe fehlt!")
-        }else {
+        if(birthday === null ) {
+            setErrorBirthday("Feld darf nicht leer sein!")
+        }
+        if(name === null) {
+            setErrorName("Feld darf nicht leer sein!")
+        }
+
+        if(birthday != null & name != null & gender != null) {
             navigation.navigate(OnboardingSelectGender);
         }
         
@@ -58,14 +67,14 @@ export function  Onboarding({ navigation }) {
                         </View>
                     </Pressable>
                     <View style={!image ? style.inputContainer : style.inputContainerImageSelected}>
-                        <InputOutline placeholder='Name' style={style.input} onChangeText={newText => setName(newText)}/>
-                        <InputOutline placeholder='Geburtstag (TT/MM/JJJJ)' style={style.input} onChangeText={newText => setBirthday(newText)}/>
+                        <InputOutline placeholder='Name' style={style.input} onChangeText={newText => setName(newText) & setErrorName(undefined)} inactiveColor="#000"  error={errorName}/>
+                        <InputOutline placeholder='Geburtstag (TT/MM/JJJJ)' style={style.input} onChangeText={newText => setBirthday(newText) & setErrorBirthday(undefined)} inactiveColor="#000" error={errorBirthday}/>
                         <View style={style.checkbuttonView}>
                             <OwnCheckButton name="männlich" onPress={() => changeGender("male")} style={style.button}/>
                             <OwnCheckButton name="weiblich" onPress={() => changeGender("female")} style={style.button}/>
                             <OwnCheckButton name="anderes" onPress={() => changeGender("other")} style={style.button}/>
                         </View>
-                        {hiddenGender && <InputOutline placeholder="Geschlecht" style={style.input} onChangeText={newText => setGender(newText)}/>}
+                        {hiddenGender && <InputOutline placeholder="Geschlecht" style={style.input} onChangeText={newText => setGender(newText)} inactiveColor={"#000"}/>}
                         <OwnButton name="Weiter" style={{ width: 256}} onPress={checkInputs} />
                     </View>
                 </View>
@@ -138,8 +147,10 @@ const style = StyleSheet.create ( {
         width: '90%',
         marginBottom: 10,
         flexDirection: 'row',
+        marginTop: 10,
     },
     button: {
-        flex: 1
+        flex: 1,
+        borderColor: '#000'
     }
 });

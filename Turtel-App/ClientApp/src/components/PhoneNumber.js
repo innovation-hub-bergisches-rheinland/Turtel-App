@@ -6,6 +6,9 @@ import DropDownPicker from 'react-native-dropdown-picker';
 import {Onboarding} from './Onboarding/Onboarding';
 
 export function  PhoneNumber({ navigation }) {
+    const [errorPostalcode, setErrorPostalcode] = useState(undefined);
+    const [errorPhonenumber, setErrorPhonenumber] = useState(undefined);
+
     const [open, setOpen] = useState(false);
     const [areacode, setAreacode] = useState(null);
     const [items, setItems] = useState([
@@ -17,15 +20,16 @@ export function  PhoneNumber({ navigation }) {
 
     const onPressForward = () => {
         console.log(areacode + phoneNumber)
-        if(areacode == null || phoneNumber == null) {
-            Alert.alert("Achtung! Du musst eine Eingabe tätigen!")
-        } else {
+        if(phoneNumber == null) {
+            setErrorPhonenumber("Feld darf nicht leer sein!");
+        } else if(areacode == null ) {
+            setErrorPostalcode("Du musst eine Auswahl treffen!");
+        }else {
             navigation.navigate(Onboarding)
         }
     }
 
     return (
-
         <SafeAreaView style={style.phoneNumberPageStyle}>
             <KeyboardAvoidingView style={{alignItems: 'center'}} behavior={Platform.OS === "ios" ? "padding" : "height"}>
                 <DropDownPicker 
@@ -40,7 +44,7 @@ export function  PhoneNumber({ navigation }) {
                     style={style.input}
                 />
                 
-                <InputOutline placeholder='Handynummer' style={style.input} onChangeText={newText => setPhoneNumber(newText)}/>
+                <InputOutline placeholder='Handynummer' style={style.input} onChangeText={newText => setPhoneNumber(newText) & setErrorPhonenumber(undefined)} error={errorPhonenumber} inactiveColor='#000'/>
                 <Text style={style.textStyle}>Wir brauchen Deine Telefonnummer, um dich anzumelden.</Text>
                 <OwnButton name="Weiter" onPress={() => onPressForward()} />
             </KeyboardAvoidingView>
