@@ -1,19 +1,24 @@
 import React, {useState} from 'react';
 import {StyleSheet, View, Text, TextInput, SafeAreaView, Alert} from 'react-native';
 import {InputOutline} from 'react-native-input-outline';
-import OwnButton from './Buttons/TurtelButton.js';
+import OwnButton from '../Buttons/TurtelButton.js';
 import DropDownPicker from 'react-native-dropdown-picker';
-import {Onboarding} from './Onboarding/Onboarding';
+import {Onboarding} from '../Onboarding/Onboarding';
+import {OnboardingSearchRelation} from '../Onboarding/OnboardingSearchRelation';
 
-export function  PhoneNumber({ navigation }) {
+export function  OnboardingLocation({ navigation }) {
     const [open, setOpen] = useState(false);
     const [areacode, setAreacode] = useState(null);
     const [items, setItems] = useState([
-        {label: 'Dänemark (+45)', value: '+45'},
-        {label: 'Deutschland (+49)', value: '+49'},
+        {label: '5km', value: '5km'},
+        {label: '10km', value: '10km'},
+        {label: '15km', value: '15km'},
+        {label: '20km', value: '20km'},
+        {label: '25km', value: '25km'},
+        {label: '50km', value: '50km'},
         
     ]);   
-    const [phoneNumber, setPhoneNumber] = useState(null);
+    const [city, setCity] = useState(null);
 
     const onPressForward = () => {
         console.log(areacode + phoneNumber)
@@ -25,9 +30,13 @@ export function  PhoneNumber({ navigation }) {
     }
 
     return (
-        <SafeAreaView style={style.phoneNumberPageStyle}>
+        <SafeAreaView style={style.pageStyle}>
+            <Text style={style.textStyle}>Ich wohne in</Text>
+            <InputOutline placeholder='Stadt/Ort' style={style.input} onChangeText={newText => setCity(newText)}/>
+            <Text style={style.textStyle}>Ich möchte Menschen kennenlernen, die nicht weiter entfernt wohnen, als</Text>
+            
             <DropDownPicker 
-                placeholder='Vorwahl'
+                placeholder='Entfernung'
                 open={open}
                 dropDownContainerStyle={style.containerStyle}
                 value={areacode}
@@ -38,16 +47,14 @@ export function  PhoneNumber({ navigation }) {
                 style={style.input}
             />
             
-            <InputOutline placeholder='Handynummer' style={style.input} onChangeText={newText => setPhoneNumber(newText)}/>
-            <Text style={style.textStyle}>Wir brauchen Deine Telefonnummer, um dich anzumelden.</Text>
-            <OwnButton name="Weiter" onPress={() => onPressForward()} />
+            <OwnButton name="Weiter" onPress={() => navigation.navigate(OnboardingSearchRelation)} />
         </SafeAreaView>
         
     );
 }
 
 const style = StyleSheet.create ( {
-    phoneNumberPageStyle: {
+    pageStyle: {
         alignItems: 'center',
         justifyContent: 'center',
         flex: 1,

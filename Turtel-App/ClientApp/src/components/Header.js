@@ -23,7 +23,7 @@ export default function Header(props) {
         </SafeAreaView>
     );
 }
-
+ 
 const style = StyleSheet.create({
     headerContainer: {
         flexDirection: 'row',

@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import {StyleSheet, View, Text, SafeAreaView, Pressable, Image} from 'react-native';
 import {InputOutline} from 'react-native-input-outline';
 import Camera from '../../images/camera.jsx';
-import OwnButton from '../TurtelButton.js';
-import OwnCheckButton from '../TurtelCheckButton.js';
+import OwnButton from '../Buttons/TurtelButton.js';
+import OwnCheckButton from '../Buttons/TurtelCheckButton.js';
 import * as ImagePicker from 'expo-image-picker';
+import { OnboardingLocation } from './OnboardingLocation.js';
 
 export function  Onboarding({ navigation }) {
     const [image, setImage] = useState(null);
@@ -21,6 +22,15 @@ export function  Onboarding({ navigation }) {
             console.log(result.assets[0].uri);
         }
     };
+
+    const onPressForward = () => {
+        console.log(areacode + phoneNumber)
+        if(areacode == null || phoneNumber == null) {
+            Alert.alert("Achtung! Du musst eine Eingabe tätigen!")
+        } else {
+            navigation.navigate(Onboarding)
+        }
+    }
 
     return (
         <SafeAreaView style={style.pageStyle}>
@@ -41,7 +51,7 @@ export function  Onboarding({ navigation }) {
                     <OwnCheckButton name="männlich"/>
                     <OwnCheckButton name="divers"/>
                 </View>
-                <OwnButton name="Weiter" onPress={() => navigation.navigate(Register)} />
+                <OwnButton name="Weiter" onPress={() => navigation.navigate(OnboardingLocation)} />
             </View>
         </SafeAreaView>
     );
