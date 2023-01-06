@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {StyleSheet, Text, KeyboardAvoidingView, SafeAreaView, Alert} from 'react-native';
 import {InputOutline} from 'react-native-input-outline';
-import OwnButton from './TurtelButton.js';
+import OwnButton from './Buttons/TurtelButton.js';
 import DropDownPicker from 'react-native-dropdown-picker';
 import {Onboarding} from './Onboarding/Onboarding';
 
@@ -59,25 +59,6 @@ const style = StyleSheet.create ( {
         justifyContent: 'center',
         flex: 1,
         backgroundColor: '#fff'
-    },
-    backButton: {
-        bottom: "22%",
-        right: "38%",
-        shadowColor: '#000000',
-        shadowOffset: {width: 3, height: 3},
-        shadowOpacity: 0.2,
-        shadowRadius: 2,
-    },
-    logoHeader: {
-        bottom: "28%",
-    },
-    helpButton: {
-        bottom: "34%",
-        left: "38%",
-        shadowColor: '#000000',
-        shadowOffset: {width: 3, height: 3},
-        shadowOpacity: 0.2,
-        shadowRadius: 2,
     },
     input: {
         height: 52,

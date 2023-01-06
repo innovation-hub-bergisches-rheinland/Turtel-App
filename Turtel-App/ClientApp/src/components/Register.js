@@ -3,7 +3,7 @@ import {StyleSheet, SafeAreaView, View, Text, Image, Pressable} from 'react-nati
 import Logo from '../images/logo.jsx';
 import TaubeLeftSVG from '../images/taube_left.jsx';
 import TaubeRightSVG from '../images/taube_right.jsx';
-import OwnButton from './TurtelButton';
+import OwnButton from './Buttons/TurtelButton';
 import {PhoneNumber} from './PhoneNumber';
 
 export function Register({navigation}) {
