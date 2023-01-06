@@ -37,7 +37,7 @@ export default class App extends Component {
         <Stack.Navigator screenOptions={{
           headerShown: false,
           cardStyle: {backgroundColor: '#fff'}
-          }} initialRouteName='Onboarding'>
+          }} initialRouteName='Register'>
           <Stack.Screen name="Register" component={Register} options={{ headerShown: false }}/>
           <Stack.Screen name="PhoneNumber" component={PhoneNumber} options={header}/>
           <Stack.Screen name="Onboarding" component={Onboarding} options={header} />
