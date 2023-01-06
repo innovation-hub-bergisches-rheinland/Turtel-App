@@ -1,11 +1,8 @@
 import React, {useState} from 'react';
-import {StyleSheet, View, Text, TextInput, SafeAreaView, Alert} from 'react-native';
+import {StyleSheet, Text, KeyboardAvoidingView, SafeAreaView, Alert} from 'react-native';
 import {InputOutline} from 'react-native-input-outline';
 import OwnButton from './TurtelButton.js';
 import DropDownPicker from 'react-native-dropdown-picker';
-import BackButton from '../images/back_button.jsx';
-import LogoHeader from '../images/logo_header.jsx';
-import HelpButton from '../images/help_button.jsx';
 import {Onboarding} from './Onboarding/Onboarding';
 
 export function  PhoneNumber({ navigation }) {
@@ -28,24 +25,27 @@ export function  PhoneNumber({ navigation }) {
     }
 
     return (
+
         <SafeAreaView style={style.phoneNumberPageStyle}>
-            <DropDownPicker 
-                placeholder='Vorwahl'
-                open={open}
-                dropDownContainerStyle={style.containerStyle}
-                value={areacode}
-                items={items}
-                setOpen={setOpen}
-                setValue={setAreacode}
-                setItems={setItems}
-                style={style.input}
-            />
-            
-            <InputOutline placeholder='Handynummer' style={style.input} onChangeText={newText => setPhoneNumber(newText)}/>
-            <Text style={style.textStyle}>Wir brauchen Deine Telefonnummer, um dich anzumelden.</Text>
-            <OwnButton name="Weiter" onPress={() => onPressForward()} />
+            <KeyboardAvoidingView style={{alignItems: 'center'}} behavior={Platform.OS === "ios" ? "padding" : "height"}>
+                <DropDownPicker 
+                    placeholder='Vorwahl'
+                    open={open}
+                    dropDownContainerStyle={style.containerStyle}
+                    value={areacode}
+                    items={items}
+                    setOpen={setOpen}
+                    setValue={setAreacode}
+                    setItems={setItems}
+                    style={style.input}
+                />
+                
+                <InputOutline placeholder='Handynummer' style={style.input} onChangeText={newText => setPhoneNumber(newText)}/>
+                <Text style={style.textStyle}>Wir brauchen Deine Telefonnummer, um dich anzumelden.</Text>
+                <OwnButton name="Weiter" onPress={() => onPressForward()} />
+            </KeyboardAvoidingView>
         </SafeAreaView>
-        
+      
     );
 }
 

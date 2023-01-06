@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
-import {StyleSheet, View, Text, SafeAreaView, Pressable, Image} from 'react-native';
+import {StyleSheet, KeyboardAvoidingView, View, Text, SafeAreaView, Pressable, Image, Alert} from 'react-native';
 import {InputOutline} from 'react-native-input-outline';
 import Camera from '../../images/camera.jsx';
 import OwnButton from '../TurtelButton.js';
 import * as ImagePicker from 'expo-image-picker';
+import OwnCheckButton from '../TurtelCheckButton';
 
 export function  Onboarding({ navigation }) {
+    const [name, setName] = useState(null);
+    const [birthday, setBirthday] = useState(null);
     const [image, setImage] = useState(null);
     const pickImage = async() => {
         let result = await ImagePicker.launchImageLibraryAsync({
@@ -21,30 +24,52 @@ export function  Onboarding({ navigation }) {
         }
     };
 
-    const [genderSelected, setGenderSelected] = useState(false);
-    const onGenderPress = () => {
-        setGenderSelected(!genderSelected);
-        return !genderSelected;
+    const [gender, setGender] = useState(null);
+    const [activeGender, setActiveGender] = useState(false);
+    const [hiddenGender, setGenderHidden] = useState(false);
+    const changeGender = (newGender) => {
+        setGenderHidden(newGender === "other" && !activeGender);
+        setGender(newGender);
+        setActiveGender(!activeGender);
+        return !activeGender;
+    };
+
+    const checkInputs = () => {
+        console.log("Name: " + name + ", Birthday: " + birthday + ", Gender: " + gender);
+        if(birthday === null | name === null | gender === null | image === null) {
+            Alert.alert("Eine Eingabe fehlt!")
+        }else {
+            navigation.navigate(OnboardingSelectGender);
+        }
+        
     }
 
     return (
         <SafeAreaView style={style.pageStyle}>
-            {image && <Image source={{ uri:image }} style={style.profilePicture} />}
-            <View style={{justifyContent: 'center', height: '100%', top: "5%"}}>
-                <Pressable onPress={pickImage}>
-                    <View style={style.imageContainer}>
-                        <View style={!image ? style.selectImage: style.imageSelected}>
-                            <Camera/>
+            <KeyboardAvoidingView style={{alignItems: 'center'}} behavior={Platform.OS === "ios" ? "padding" : "height"}>
+                {image && <Image source={{ uri:image }} style={style.profilePicture} />}
+                <View style={{justifyContent: 'center', height: '100%', top: "5%"}}>
+                    <Pressable onPress={pickImage}>
+                        <View style={style.imageContainer}>
+                            <View style={!image ? style.selectImage: style.imageSelected}>
+                                <Camera/>
+                            </View>
+                            {!image && <Text style={{textAlign: 'center'}}>Wähle ein Bild von Dir!</Text>}
                         </View>
-                        {!image && <Text style={{textAlign: 'center'}}>Wähle ein Bild von Dir!</Text>}
+                    </Pressable>
+                    <View style={!image ? style.inputContainer : style.inputContainerImageSelected}>
+                        <InputOutline placeholder='Name' style={style.input} onChangeText={newText => setName(newText)}/>
+                        <InputOutline placeholder='Geburtstag (TT/MM/JJJJ)' style={style.input} onChangeText={newText => setBirthday(newText)}/>
+                        <View style={style.checkbuttonView}>
+                            <OwnCheckButton name="männlich" onPress={() => changeGender("male")} style={style.button}/>
+                            <OwnCheckButton name="weiblich" onPress={() => changeGender("female")} style={style.button}/>
+                            <OwnCheckButton name="anderes" onPress={() => changeGender("other")} style={style.button}/>
+                        </View>
+                        {hiddenGender && <InputOutline placeholder="Geschlecht" style={style.input} onChangeText={newText => setGender(newText)}/>}
+                        <OwnButton name="Weiter" style={{ width: 256}} onPress={checkInputs} />
                     </View>
-                </Pressable>
-                <View style={!image ? style.inputContainer : style.inputContainerImageSelected}>
-                    <InputOutline placeholder='Name' style={style.input}/>
-                    <InputOutline placeholder='Geburtstag (TT/MM/JJJJ)' style={style.input}/>
-                    <OwnButton name="Weiter" style={{ width: 256}} onPress={() => navigation.navigate(Register)} />
                 </View>
-            </View>
+            </KeyboardAvoidingView>
         </SafeAreaView>
     );
 }
@@ -108,5 +133,13 @@ const style = StyleSheet.create ( {
         width: '100%',
         justifyContent: 'center',
         alignItems: 'center',
+    },
+    checkbuttonView: {
+        width: '90%',
+        marginBottom: 10,
+        flexDirection: 'row',
+    },
+    button: {
+        flex: 1
     }
 });

@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import {StyleSheet, Text, View, Image, StatusBar, Platform, Pressable} from 'react-native';
+import {StyleSheet, StatusBar, Platform, Pressable} from 'react-native';
 import {Register} from './components/Register';
 import {PhoneNumber} from './components/PhoneNumber';
-import Header from './components/Header';
 import {Onboarding} from './components/Onboarding/Onboarding';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
