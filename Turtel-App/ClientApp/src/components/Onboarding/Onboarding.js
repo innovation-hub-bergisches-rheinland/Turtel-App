@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import {StyleSheet, KeyboardAvoidingView, View, Text, SafeAreaView, Pressable, Image, Alert} from 'react-native';
 import {InputOutline} from 'react-native-input-outline';
 import Camera from '../../images/camera.jsx';
-import OwnButton from '../TurtelButton.js';
+import OwnButton from '../Buttons/TurtelButton.js';
 import * as ImagePicker from 'expo-image-picker';
-import OwnCheckButton from '../TurtelCheckButton';
+import OwnCheckButton from '../Buttons/TurtelCheckButton';
+import {OnboardingLocation} from './OnboardingLocation';
 
 export function  Onboarding({ navigation }) {
     const [errorName, setErrorName] = useState(undefined);
@@ -48,7 +49,7 @@ export function  Onboarding({ navigation }) {
         }
 
         if(birthday != null & name != null & gender != null) {
-            navigation.navigate(OnboardingSelectGender);
+            navigation.navigate(OnboardingLocation);
         }
         
     }
