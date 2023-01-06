@@ -20,6 +20,7 @@ const style = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         height: 52,
+        width: 256,
     },   
     textStyle: {
         fonstSize: 50,
