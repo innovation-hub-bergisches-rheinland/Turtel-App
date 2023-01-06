@@ -3,8 +3,8 @@ import Svg, { G, Path, Defs, ClipPath } from "react-native-svg"
 
 const TaubeHelp = (props) => (
   <Svg
-    width={30}
-    height={49}
+    width={50}
+    height={50}
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >

@@ -4,10 +4,15 @@ import BackButton from '../images/back_button.jsx';
 import LogoHeader from '../images/logo_header.jsx';
 import HelpButton from '../images/help_button.jsx'; 
 
-export default function Header(props) {
+export default function Header(){
+
+    handleBackButton = () => {
+        this.navigation.goBack();
+    }
+
     return ( 
         <SafeAreaView style={style.headerContainer}>
-            <Pressable onPress={props.onPressBack}>
+            <Pressable onPress={handleBackButton}>
                 <View style={style.backButton}>
                     <BackButton />
                 </View>
@@ -15,7 +20,7 @@ export default function Header(props) {
             <View style={style.logoHeader}>
                 <LogoHeader />
             </View>
-            <Pressable onPress={props.onPressHelp}>
+            <Pressable onPress={() => console.log("Help!")}>
                 <View style={style.helpButton}>
                     <HelpButton />
                  </View>

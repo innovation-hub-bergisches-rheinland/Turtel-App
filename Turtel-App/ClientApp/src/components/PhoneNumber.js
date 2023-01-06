@@ -54,6 +54,7 @@ const style = StyleSheet.create ( {
         alignItems: 'center',
         justifyContent: 'center',
         flex: 1,
+        backgroundColor: '#fff'
     },
     backButton: {
         bottom: "22%",
