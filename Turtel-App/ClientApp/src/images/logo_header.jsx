@@ -1,10 +1,12 @@
 import * as React from "react";
 import Svg, { G, Path, Defs, ClipPath, Rect } from "react-native-svg";
+import { useHeaderHeight } from '@react-navigation/elements';
+
 /* SVGR has dropped some elements not supported by react-native-svg: filter */
 const SVGComponent = (props) => (
   <Svg
     width={107}
-    height={30}
+    height={useHeaderHeight()/2}
     viewBox="0 0 107 30"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"

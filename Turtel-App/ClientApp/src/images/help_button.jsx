@@ -1,17 +1,19 @@
 import * as React from "react";
 import Svg, { G, Rect, Path, Defs, ClipPath } from "react-native-svg";
+import { useHeaderHeight } from '@react-navigation/elements';
+
 /* SVGR has dropped some elements not supported by react-native-svg: filter */
 const SVGComponent = (props) => (
   <Svg
-    width={60}
-    height={64}
+    width={Platform.OS === 'android' ? useHeaderHeight() : useHeaderHeight()/2}
+    height={Platform.OS === 'android' ? useHeaderHeight() : useHeaderHeight()/2}
     viewBox="0 0 60 64"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     {...props}
   >
     <G filter="url(#filter0_d_231_1136)">
-      <Rect x={2} width={52} height={56} rx={15} fill="white" />
+      <Rect x={2} width={52} height={56} rx={15} />
     </G>
     <G clipPath="url(#clip0_231_1136)">
       <Path
@@ -272,7 +274,6 @@ const SVGComponent = (props) => (
         <Rect
           width={24.375}
           height={39.7681}
-          fill="white"
           transform="translate(15.8125 9.73914)"
         />
       </ClipPath>
