@@ -17,7 +17,7 @@ namespace Turtel_App.ServerApp.Matching.Application
             {
                 var matchedUser = service.GetRandomUsers();
                 distance = CalculateDistance(user.Location.Latitude, user.Location.Longitude, matchedUser.Location.Latitude, matchedUser.Location.Latitude);
-            } while (distance < 50);
+            } while (distance < user.Location.Distance);
 
             return new Match() { User = user, Matches = service.GetRandomUsers(), Distance = distance};
         }
