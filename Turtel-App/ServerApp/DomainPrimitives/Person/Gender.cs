@@ -13,5 +13,10 @@ namespace Turtel_App.ServerApp.DomainPrimitives.Person
         {
             this.representation = representation;
         }
+
+        public string GetRepresentation()
+        {
+            return representation;
+        }
     }
 }

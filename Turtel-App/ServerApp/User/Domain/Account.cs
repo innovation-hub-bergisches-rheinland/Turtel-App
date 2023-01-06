@@ -20,7 +20,7 @@ namespace Turtel_App.ServerApp.User.Domain
         DateTime Birthday { get; set; }
 
         [Required]
-        Gender Gender { get; set; }
+        public Gender Gender { get; set; }
 
         public Account()
         {

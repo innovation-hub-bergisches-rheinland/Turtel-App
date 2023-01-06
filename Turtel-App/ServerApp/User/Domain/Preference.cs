@@ -11,39 +11,37 @@ namespace Turtel_App.ServerApp.User.Domain
         public Guid Id { get; private set; }
 
         [Required]
-        public string PreferenceType { get; }
-
-        [Required]
-        public string PreferenceCategory { get; }
-
+        string PreferenceType { get; }
 
         public Preference()
         {
             PreferenceType = "";
-            PreferenceCategory = "";
         }
 
-        public Preference(string preferenceType, string preferenceCategory)
+        public Preference(string preferenceType)
         {
             this.PreferenceType = preferenceType ?? throw new ArgumentNullException(nameof(preferenceType));
-            this.PreferenceCategory = preferenceCategory ?? throw new ArgumentNullException(nameof(preferenceCategory));
         }
 
         public override bool Equals(object? obj)
         {
             return obj is Preference preference &&
-                   PreferenceType == preference.PreferenceType &&
-                   PreferenceCategory == preference.PreferenceCategory;
+                   PreferenceType == preference.PreferenceType;
         }
 
         public override int GetHashCode()
         {
-            return HashCode.Combine(PreferenceType, PreferenceCategory);
+            return HashCode.Combine(PreferenceType);
         }
 
         public override string? ToString()
         {
             return base.ToString();
+        }
+
+        public string GetPreferenceType()
+        {
+            return PreferenceType.ToString();
         }
     }
 }

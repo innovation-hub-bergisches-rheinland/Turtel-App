@@ -30,6 +30,7 @@ namespace Turtel_App.ServerApp.User.Domain
 
         public ICollection<User> Matches { get; }
         public ICollection<Preference> Preferences { get; }
+        public string PreferenceCategory { get; }
 
         public Location Location { get; private set; }
         public User()
