@@ -29,7 +29,7 @@ namespace Turtel_App.ServerApp.Matching.Application
         //    _matchRepository.SaveChanges();
         //    return _match;
         //}
-        public double CalculateDistance(double latitudeO, double longitudeO, double latitudeD, double longitudeD)
+        private double CalculateDistance(double latitudeO, double longitudeO, double latitudeD, double longitudeD)
         {
             return GeoCalculator.GetDistance(latitudeO, longitudeO, latitudeD, longitudeD, 1, DistanceUnit.Kilometers);
         }
