@@ -1,4 +1,22 @@
-﻿# See https://help.github.com/ignore-files/ for more about ignoring files.
+﻿
+
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/contentModel.xml
+/projectSettingsUpdater.xml
+/modules.xml
+/.idea.Turtel-App.iml
+# Editor-based HTTP Client requests
+/httpRequests/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+
+
 
 # dependencies
 /node_modules
