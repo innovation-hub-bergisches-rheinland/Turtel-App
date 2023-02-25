@@ -3,7 +3,7 @@ import { StyleSheet, Text, KeyboardAvoidingView, SafeAreaView, Alert } from 'rea
 import {InputOutline} from 'react-native-input-outline';
 import OwnButton from './Buttons/TurtelButton.js';
 import DropDownPicker from 'react-native-dropdown-picker';
-import {Onboarding} from './Onboarding/Onboarding';
+import { OnboardingWelcomeSplash } from './Onboarding/OnboardingWelcomeSplash';
 
 export function PhoneNumber({ navigation }) {
     const [errorPostalcode, setErrorPostalcode] = useState(undefined);
@@ -25,7 +25,7 @@ export function PhoneNumber({ navigation }) {
         } else if (areacode == null) {
             setErrorPostalcode("Du musst eine Auswahl treffen!");
         } else {
-            navigation.navigate(Onboarding)
+            navigation.navigate(OnboardingWelcomeSplash)
         }
     }
 
