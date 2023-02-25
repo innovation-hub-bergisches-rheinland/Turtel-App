@@ -7,10 +7,11 @@ import * as ImagePicker from 'expo-image-picker';
 import OwnCheckButton from '../Buttons/TurtelCheckButton.js';
 import { OnboardingLocation } from './OnboardingLocation';
 
+import DatePicker from 'react-native-date-picker'
+
 export function Onboarding({ navigation }) {
     const [errorName, setErrorName] = useState(undefined);
     const [errorBirthday, setErrorBirthday] = useState(undefined);
-
 
     const [name, setName] = useState(null);
     const [birthday, setBirthday] = useState(null);
@@ -69,7 +70,10 @@ export function Onboarding({ navigation }) {
                     </Pressable>
                     <View style={!image ? style.inputContainer : style.inputContainerImageSelected}>
                         <InputOutline placeholder='Name' style={style.input} onChangeText={newText => setName(newText) & setErrorName(undefined)} inactiveColor="#000" error={errorName} />
-                        <InputOutline placeholder='Geburtstag (TT/MM/JJJJ)' style={style.input} onChangeText={newText => setBirthday(newText) & setErrorBirthday(undefined)} inactiveColor="#000" error={errorBirthday} />
+                        <InputOutline placeholder='Geburtstag (TT/MM/JJJJ)' style={style.input}
+                            onChangeText={newText => setBirthday(newText) & setErrorBirthday(undefined)}
+                            inactiveColor="#000" error={errorBirthday} />
+
                         <View style={style.checkbuttonView}>
                             <OwnCheckButton name="männlich" onPress={() => changeGender("male")} style={style.button} />
                             <OwnCheckButton name="weiblich" onPress={() => changeGender("female")} style={style.button} />

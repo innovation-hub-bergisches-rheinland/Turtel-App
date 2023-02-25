@@ -31,7 +31,7 @@ export function PhoneNumber({ navigation }) {
 
     return (
         <SafeAreaView style={style.phoneNumberPageStyle}>
-            <KeyboardAvoidingView style={{ alignItems: 'center' }} behavior={Platform.OS === "ios" ? "padding" : "height"}>
+            <KeyboardAvoidingView style={{ alignItems: 'center' }} behavior={Platform.OS === "ios" ? "padding" : "height"} >
                 <DropDownPicker
                     placeholder='Vorwahl'
                     open={open}
@@ -44,7 +44,11 @@ export function PhoneNumber({ navigation }) {
                     style={style.input}
                 />
 
-                <InputOutline placeholder='Handynummer' style={style.input} onChangeText={newText => setPhoneNumber(newText) & setErrorPhonenumber(undefined)} error={errorPhonenumber} inactiveColor='#000' />
+                <InputOutline placeholder='Handynummer'
+                    style={style.input}
+                    onChangeText={newText => setPhoneNumber(newText) & setErrorPhonenumber(undefined)}
+                    error={errorPhonenumber} inactiveColor='#000'
+                    keyboardType={Platform.OS === "ios" ? "number-pad" : "numeric"} />
                 <Text style={style.textStyle}>Wir brauchen Deine Telefonnummer, um dich anzumelden.</Text>
                 <OwnButton name="Weiter" onPress={() => onPressForward()} />
             </KeyboardAvoidingView>
