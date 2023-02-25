@@ -1,0 +1,9 @@
+﻿< svg width = "360" height = "800" viewBox = "0 0 360 800" fill = "none" xmlns = "http://www.w3.org/2000/svg" >
+< rect width = "360" height = "800" fill = "url(#paint0_linear_7_3401)" />
+< defs >
+< linearGradient id = "paint0_linear_7_3401" x1 = "-49.5" y1 = "-40.5" x2 = "451" y2 = "1011" gradientUnits = "userSpaceOnUse" >
+< stop stop - color = "#9777BF" />
+< stop offset = "1" stop - color = "#7B8ACE" />
+</ linearGradient >
+</ defs >
+</ svg >

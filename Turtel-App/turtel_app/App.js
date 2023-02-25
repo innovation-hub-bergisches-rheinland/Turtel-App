@@ -14,6 +14,7 @@ import BackButton from './assets/images/back_button.jsx';
 import { OnboardingSearchRelation } from './src/components/Onboarding/OnboardingSearchRelation';
 import { OnboardingSearchPerson } from './src/components/Onboarding/OnboardingSearchPerson';
 import { OnboardingIntroduction } from './src/components/Onboarding/OnboardingIntroduction';
+import { OnboardingDoneSplash } from './src/components/Onboarding/OnboardingDoneSplash';
 
 
 const Stack = createNativeStackNavigator();
@@ -49,6 +50,7 @@ export default class App extends Component {
                     <Stack.Screen name="OnboardingSearchRelation" component={OnboardingSearchRelation} options={header} />
                     <Stack.Screen name="OnboardingSearchPerson" component={OnboardingSearchPerson} options={header} />
                     <Stack.Screen name="OnboardingIntroduction" component={OnboardingIntroduction} options={header} />
+                    <Stack.Screen name="OnboardingDoneSplash" component={OnboardingDoneSplash} options={header} />
                 </Stack.Navigator>
             </NavigationContainer>
         );
