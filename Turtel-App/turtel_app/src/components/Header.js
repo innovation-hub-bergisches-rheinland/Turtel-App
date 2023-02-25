@@ -4,10 +4,15 @@ import BackButton from '../../assets/images/back_button.jsx';
 import LogoHeader from '../../assets/images/logo_header.jsx';
 import HelpButton from '../../assets/images/help_button.jsx'; 
 
-export default function Header(props) {
-    return ( 
+export default function Header() {
+
+    handleBackButton = () => {
+        this.navigation.goBack();
+    }
+
+    return (
         <SafeAreaView style={style.headerContainer}>
-            <Pressable onPress={props.onPressBack}>
+            <Pressable onPress={handleBackButton}>
                 <View style={style.backButton}>
                     <BackButton />
                 </View>
@@ -15,10 +20,10 @@ export default function Header(props) {
             <View style={style.logoHeader}>
                 <LogoHeader />
             </View>
-            <Pressable onPress={props.onPressHelp}>
+            <Pressable onPress={() => console.log("Help!")}>
                 <View style={style.helpButton}>
                     <HelpButton />
-                 </View>
+                </View>
             </Pressable>
         </SafeAreaView>
     );
@@ -29,23 +34,23 @@ const style = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        
+
     },
     backButton: {
         marginLeft: 10,
         shadowColor: '#000',
-        shadowOffset: {width: 3, height: 3},
+        shadowOffset: { width: 3, height: 3 },
         shadowOpacity: 0.2,
         shadowRadius: 2,
     },
     helpButton: {
         marginRight: 10,
         shadowColor: '#000',
-        shadowOffset: {width: 3, height: 3},
+        shadowOffset: { width: 3, height: 3 },
         shadowOpacity: 0.2,
         shadowRadius: 2,
     },
-    logoHeader:  {
-        
+    logoHeader: {
+
     }
 });
