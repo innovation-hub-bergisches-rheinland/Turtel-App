@@ -1,8 +1,8 @@
 ﻿import React from 'react';
 import {StyleSheet, SafeAreaView, View, Text, Image, Pressable} from 'react-native';
-import Logo from '../images/logo.jsx';
-import TaubeLeftSVG from '../images/taube_left.jsx';
-import TaubeRightSVG from '../images/taube_right.jsx';
+import Logo from '../../assets/images/logo.jsx';
+import TaubeLeftSVG from '../../assets/images/taube_left.jsx';
+import TaubeRightSVG from '../../assets/images/taube_right.jsx';
 import OwnButton from './TurtelButton';
 import {PhoneNumber} from './PhoneNumber';
 

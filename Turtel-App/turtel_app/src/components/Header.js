@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import {StyleSheet, Text, Pressable, SafeAreaView, View, DrawerLayoutAndroid} from 'react-native';
-import BackButton from '../images/back_button.jsx';
-import LogoHeader from '../images/logo_header.jsx';
-import HelpButton from '../images/help_button.jsx'; 
+import BackButton from '../../assets/images/back_button.jsx';
+import LogoHeader from '../../assets/images/logo_header.jsx';
+import HelpButton from '../../assets/images/help_button.jsx'; 
 
 export default function Header(props) {
     return ( 

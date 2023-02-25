@@ -270,3 +270,8 @@ _Pvt_Extensions
 
 # FAKE - F# Make
 .fake/
+/Turtel-Test/obj/project.assets.json
+/Turtel-Test/obj/project.nuget.cache
+/Turtel-Test/obj/Turtel-Test.csproj.nuget.dgspec.json
+/Turtel-Test/obj/Turtel-Test.csproj.nuget.g.props
+/Turtel-Test/obj/Turtel-Test.csproj.nuget.g.targets

@@ -5,7 +5,7 @@ VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Turtel-App", "Turtel-App.csproj", "{BDC5CB50-DDC2-49A4-904F-7AF301B626F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Turtel-Test", "..\Turtel-Test\Turtel-Test.csproj", "{1F542DBB-79E7-452F-8451-C6A3F7B7F622}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Turtel-Test", "..\Turtel-Test\Turtel-Test.csproj", "{1F542DBB-79E7-452F-8451-C6A3F7B7F622}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

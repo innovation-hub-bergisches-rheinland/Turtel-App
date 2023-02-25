@@ -3,9 +3,9 @@ import {StyleSheet, View, Text, TextInput, SafeAreaView, Alert} from 'react-nati
 import {InputOutline} from 'react-native-input-outline';
 import OwnButton from './TurtelButton.js';
 import DropDownPicker from 'react-native-dropdown-picker';
-import BackButton from '../images/back_button.jsx';
-import LogoHeader from '../images/logo_header.jsx';
-import HelpButton from '../images/help_button.jsx';
+import BackButton from '../../assets/images/back_button.jsx';
+import LogoHeader from '../../assets/images/logo_header.jsx';
+import HelpButton from '../../assets/images/help_button.jsx';
 import {Onboarding} from './Onboarding/Onboarding';
 
 export function  PhoneNumber({ navigation }) {

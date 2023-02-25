@@ -1,0 +1,38 @@
+{
+  "name": "turtel_app",
+  "version": "1.0.0",
+  "main": "node_modules/expo/AppEntry.js",
+  "scripts": {
+    "prestart": "node aspnetcore-https && node aspnetcore-react",
+    "start": "npx cross-env NODE_OPTIONS=--openssl-legacy-provider expo start --localhost",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web"
+  },
+  "dependencies": {
+    "@babel/plugin-proposal-export-namespace-from": "^7.18.9",
+    "@expo/webpack-config": "^0.17.2",
+    "@react-navigation/native": "^6.1.5",
+    "@react-navigation/native-stack": "^6.9.11",
+    "babel-preset-expo": "^9.2.2",
+    "bootstrap": "^5.2.3",
+    "expo": "~47.0.12",
+    "expo-image-picker": "~14.0.2",
+    "expo-linear-gradient": "^12.0.1",
+    "expo-status-bar": "~1.4.2",
+    "http-proxy-middleware": "^2.0.6",
+    "react": "18.1.0",
+    "react-dom": "18.1.0",
+    "react-native": "0.70.5",
+    "react-native-debugger": "^1.1.0",
+    "react-native-dropdown-picker": "^5.4.4",
+    "react-native-input-outline": "^1.5.2",
+    "react-native-reanimated": "~2.12.0",
+    "react-native-svg": "13.4.0",
+    "react-native-web": "~0.18.9"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.9"
+  },
+  "private": true
+}

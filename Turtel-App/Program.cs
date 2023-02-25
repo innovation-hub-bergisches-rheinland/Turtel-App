@@ -1,3 +1,5 @@
+using Microsoft.IdentityModel.Protocols.OpenIdConnect;
+using System.Diagnostics;
 
 namespace Turtel_App
 {
@@ -15,12 +17,34 @@ namespace Turtel_App
             builder.Services.AddSwaggerGen();
 
             var app = builder.Build();
+            var onAppClose = () => { };
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();
+
+                var launchTurtel_App = Task.Factory.StartNew(() =>
+                {
+                    string workingDirectory = System.Environment.CurrentDirectory + @"\turtel_app\";
+
+                    using (Process proc = new Process())
+                    {
+                        proc.StartInfo.FileName = "cmd.exe";
+                        proc.StartInfo.UseShellExecute = false;
+                        proc.StartInfo.RedirectStandardInput = true;
+
+                        proc.StartInfo.WorkingDirectory = workingDirectory;
+                        proc.Start();
+
+                        proc.StandardInput.WriteLine("start cmd /k npm run start");
+                        proc.StandardInput.Flush();
+                        proc.StandardInput.Close();
+                        onAppClose = () => { proc.Kill(true); };
+                        proc.WaitForExit();
+                    }
+                });
             } else
             {
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
@@ -40,7 +64,11 @@ namespace Turtel_App
 
             //app.MapFallbackToFile("index.html");
 
+            
+
             app.Run();
+            onAppClose();
+
         }
     }
 }

@@ -1,32 +1,28 @@
-﻿{
+{
+  "profiles": {
+    "Turtel_App": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "https://localhost:7001;http://localhost:5001"
+    },
+    "Expo Metro": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Windows\\System32\\cmd.exe",
+      "commandLineArgs": "start cmd /k npm run start --reset-cache",
+      "authenticationMode": "None"
+    }
+  },
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
       "applicationUrl": "http://localhost:1400",
       "sslPort": 44300
-    }
-  },
-  "profiles": {
-    "Turtel_App": {
-      "commandName": "Project",
-      "dotnetRunMessages": true,
-      "launchBrowser": true,
-      "launchUrl": "swagger",
-      "applicationUrl": "https://localhost:7001;http://localhost:5001",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development",
-        "ASPNETCORE_HOSTINGSTARTUPASSEMBLIES": "Microsoft.AspNetCore.SpaProxy"
-      }
-    },
-    "IIS Express": {
-      "commandName": "IISExpress",
-      "launchBrowser": true,
-      "launchUrl": "swagger",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development",
-        "ASPNETCORE_HOSTINGSTARTUPASSEMBLIES": "Microsoft.AspNetCore.SpaProxy"
-      }
     }
   }
 }

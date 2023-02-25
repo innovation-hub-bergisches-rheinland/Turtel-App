@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import {StyleSheet, View, Text, SafeAreaView, Pressable, Image} from 'react-native';
 import {InputOutline} from 'react-native-input-outline';
-import Camera from '../../images/camera.jsx';
+import Camera from '../../../assets/images/camera.jsx';
 import OwnButton from '../TurtelButton.js';
 import OwnCheckButton from '../TurtelCheckButton.js';
+import { Register } from './../Register';
 import * as ImagePicker from 'expo-image-picker';
 
 export function  Onboarding({ navigation }) {
