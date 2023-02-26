@@ -18,6 +18,7 @@ import { OnboardingDoneSplash } from './src/components/Onboarding/OnboardingDone
 import { OnboardingGoSplash } from './src/components/Onboarding/OnboardingGoSplash';
 import { OnboardingDescriptionText } from './src/components/Onboarding/OnboardingDescriptionText';
 import { Menu } from './src/components/Menu/Menu';
+import { OnboardingDescriptionAudio } from './src/components/Onboarding/OnboardingDescriptionAudio';
 
 
 const Stack = createNativeStackNavigator();
@@ -45,7 +46,7 @@ export default class App extends Component {
                 <Stack.Navigator screenOptions={{
                     headerShown: false,
                     cardStyle: { backgroundColor: '#fff' }
-                }} initialRouteName='OnboardingLocation'>
+                }} initialRouteName='Register'>
                     <Stack.Screen name="Register" component={Register} options={{ headerShown: false }} />
                     <Stack.Screen name="PhoneNumber" component={PhoneNumber} options={header} />
                     <Stack.Screen name="OnboardingGoSplash" component={OnboardingGoSplash} options={{ headerShown: false }} />
@@ -57,6 +58,7 @@ export default class App extends Component {
                     <Stack.Screen name="OnboardingDoneSplash" component={OnboardingDoneSplash} options={header} />
                     <Stack.Screen name="OnboardingDescriptionText" component={OnboardingDescriptionText} options={header} />
                     <Stack.Screen name="Menu" component={Menu} options={header} />
+                    <Stack.Screen name="OnboardingDescriptionAudio" component={OnboardingDescriptionAudio} options={header} />
                 </Stack.Navigator>
             </NavigationContainer>
         );

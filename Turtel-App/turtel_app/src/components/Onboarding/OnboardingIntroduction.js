@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {StyleSheet, View, Text, TextInput, SafeAreaView, Alert} from 'react-native';
 import OwnButton from '../Buttons/TurtelButton.js';
 import OwnCheckButton from '../Buttons/TurtelCheckButton.js';
+import { OnboardingDescriptionAudio } from './OnboardingDescriptionAudio.js';
 import { OnboardingDescriptionText } from './OnboardingDescriptionText.js';
 import { OnboardingDoneSplash } from './OnboardingDoneSplash.js';
 
@@ -14,7 +15,7 @@ export function  OnboardingIntroduction({ navigation }) {
                 <OwnCheckButton name="Text schreiben" style={{flex: 1}} onPress={() => navigation.navigate(OnboardingDescriptionText)}/>
             </View>
             <View style={style.biological}>
-                <OwnCheckButton name="Audio aufnehmen" style={{flex: 1}}/>
+                <OwnCheckButton name="Audio aufnehmen" style={{flex: 1}} onPress={() => navigation.navigate(OnboardingDescriptionAudio)}/>
             </View>
             <View style={style.biological}>
                 <OwnCheckButton name="Video drehen" style={{flex: 1}}/>
