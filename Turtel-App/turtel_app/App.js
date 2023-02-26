@@ -16,7 +16,7 @@ import { OnboardingSearchPerson } from './src/components/Onboarding/OnboardingSe
 import { OnboardingIntroduction } from './src/components/Onboarding/OnboardingIntroduction';
 import { OnboardingDoneSplash } from './src/components/Onboarding/OnboardingDoneSplash';
 import { OnboardingGoSplash } from './src/components/Onboarding/OnboardingGoSplash';
-
+import { OnboardingDescriptionText } from './src/components/Onboarding/OnboardingDescriptionText';
 import { Menu } from './src/components/Menu/Menu';
 
 
@@ -27,7 +27,7 @@ const header = ({ navigation, route }) => ({
     headerBackVisible: false,
     headerTitle: (props) => <LogoHeader />,
     headerLeft: () => <Pressable onPress={() => navigation.pop()}><BackButton /></Pressable>,
-    headerRight: () => <Pressable onPress={() => Alert.alert("Hier steht später ein Hilfetext! :) ")}><HelpButton /></Pressable>,
+    headerRight: () => <Pressable onPress={() => Alert.alert("Hier steht spï¿½ter ein Hilfetext! :) ")}><HelpButton /></Pressable>,
     headerTitleAlign: 'center',
     headerTitleStyle: {
         textAlign: "center",
@@ -45,16 +45,17 @@ export default class App extends Component {
                 <Stack.Navigator screenOptions={{
                     headerShown: false,
                     cardStyle: { backgroundColor: '#fff' }
-                }} initialRouteName='Register'>
+                }} initialRouteName='OnboardingLocation'>
                     <Stack.Screen name="Register" component={Register} options={{ headerShown: false }} />
                     <Stack.Screen name="PhoneNumber" component={PhoneNumber} options={header} />
-                    <Stack.Screen name="OnboardingGoSplash" component={OnboardingGoSplash} options={header} />
+                    <Stack.Screen name="OnboardingGoSplash" component={OnboardingGoSplash} options={{ headerShown: false }} />
                     <Stack.Screen name="Onboarding" component={Onboarding} options={header} />
                     <Stack.Screen name="OnboardingLocation" component={OnboardingLocation} options={header} />
                     <Stack.Screen name="OnboardingSearchRelation" component={OnboardingSearchRelation} options={header} />
                     <Stack.Screen name="OnboardingSearchPerson" component={OnboardingSearchPerson} options={header} />
                     <Stack.Screen name="OnboardingIntroduction" component={OnboardingIntroduction} options={header} />
                     <Stack.Screen name="OnboardingDoneSplash" component={OnboardingDoneSplash} options={header} />
+                    <Stack.Screen name="OnboardingDescriptionText" component={OnboardingDescriptionText} options={header} />
                     <Stack.Screen name="Menu" component={Menu} options={header} />
                 </Stack.Navigator>
             </NavigationContainer>

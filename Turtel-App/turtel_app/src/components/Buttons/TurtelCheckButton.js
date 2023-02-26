@@ -11,11 +11,11 @@ export default function OwnCheckButton(props) {
     const grey = '#4C4C4C'
 
     return (
-        <LinearGradient colors={active ? linearGradientColorsActive : linearGradientColorsInactive} start={[0.1, 0.1]} end={[1.8, 0.9]} style={[active ? style.buttonsBiologicalActive : style.buttonsBiologicalInactive, props.style]}>
-            <Pressable onPress={() =>  setActive(props.onPress)}>
+        <Pressable onPress={() =>  setActive(props.onPress)} style={props.style}>
+            <LinearGradient colors={active ? linearGradientColorsActive : linearGradientColorsInactive} start={[0.1, 0.1]} end={[1.8, 0.9]} style={[active ? style.buttonsBiologicalActive : style.buttonsBiologicalInactive]}>
                 <Text style={{color: active ? white : grey}}>{props.name}</Text>
-            </Pressable>
-        </LinearGradient>
+            </LinearGradient>
+        </Pressable>
     );
 }
 
