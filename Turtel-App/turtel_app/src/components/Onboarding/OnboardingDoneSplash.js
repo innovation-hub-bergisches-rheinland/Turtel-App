@@ -3,6 +3,7 @@ import { StyleSheet, KeyboardAvoidingView, View, Text, SafeAreaView, Pressable, 
 import Taube3InFrame from '../../../assets/images/Taube3InFrame.jsx';
 import OwnSplashButton from '../Buttons/TurtelSplashButton.js';
 import { LinearGradient } from 'expo-linear-gradient';
+import { Menu } from './../Menu/Menu';
 
 
 export function OnboardingDoneSplash({ navigation }) {
@@ -19,7 +20,7 @@ export function OnboardingDoneSplash({ navigation }) {
                     <Text style={style.text2}>geschafft!</Text>
                     <Text style={style.text3}>Jetzt kann es losgehen.</Text>
                     <Text style={style.text4}>Bist du bereit zum Turteln?</Text>
-                    <OwnSplashButton name="Ja, los gehts!" style={style.buttonStyle} onPress={() => { alert("Weiter gehts hier leider noch nicht.")} } />
+                    <OwnSplashButton name="Ja, los gehts!" style={style.buttonStyle} onPress={ () => navigation.navigate(Menu) } />
                 </View>
             </LinearGradient>
         </SafeAreaView>
