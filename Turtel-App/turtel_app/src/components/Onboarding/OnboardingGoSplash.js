@@ -6,7 +6,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { Onboarding } from './Onboarding';
 
 
-export function OnboardingWelcomeSplash({ navigation }) {
+export function OnboardingGoSplash({ navigation }) {
 
 
     return (

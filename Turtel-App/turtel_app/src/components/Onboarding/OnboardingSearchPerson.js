@@ -4,19 +4,32 @@ import OwnButton from '../Buttons/TurtelButton.js';
 import OwnCheckButton from '../Buttons/TurtelCheckButton.js';
 import { OnboardingIntroduction } from './OnboardingIntroduction.js';
 
+function registerPress(map, index) {
+    let check = !map[index];
+    map[index] = check;
+    return check;
+}
+
+
 export function  OnboardingSearchPerson({ navigation }) {
+    var map = {
+        "male": false,
+        "female": false,
+        "diverse": false,
+        "any": false
+    };
+
 
     return (
         <SafeAreaView style={style.pageStyle}>
             <Text style={style.textStyle}>Ich suche</Text>
             <View style={style.biological}>
-                <OwnCheckButton name="Männer" style={{flex: 1}}/>
-                <OwnCheckButton name="Frauen" style={{flex: 1}}/>
-                <OwnCheckButton name="Beides" style={{flex: 1}}/>
+                <OwnCheckButton onPress={() => registerPress(map, "male")} name="Männer" style={{flex: 1}}/>
+                <OwnCheckButton onPress={() => registerPress(map, "female")} name="Frauen" style={{flex: 1}}/>
             </View>
             <View style={style.biological}>
-                <OwnCheckButton name="Divers" style={{flex: 1}}/>
-                <OwnCheckButton name="Egal" style={{flex: 1}}/>
+                <OwnCheckButton onPress={() => registerPress(map, "diverse")} name="Divers" style={{flex: 1}}/>
+                <OwnCheckButton onPress={() => registerPress(map, "any")} name="Egal" style={{flex: 1}}/>
             </View>
             <OwnButton name="Weiter" onPress={() => navigation.navigate(OnboardingIntroduction)} />
         </SafeAreaView>

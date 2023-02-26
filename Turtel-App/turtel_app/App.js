@@ -15,7 +15,7 @@ import { OnboardingSearchRelation } from './src/components/Onboarding/Onboarding
 import { OnboardingSearchPerson } from './src/components/Onboarding/OnboardingSearchPerson';
 import { OnboardingIntroduction } from './src/components/Onboarding/OnboardingIntroduction';
 import { OnboardingDoneSplash } from './src/components/Onboarding/OnboardingDoneSplash';
-import { OnboardingWelcomeSplash } from './src/components/Onboarding/OnboardingWelcomeSplash';
+import { OnboardingGoSplash } from './src/components/Onboarding/OnboardingGoSplash';
 
 
 const Stack = createNativeStackNavigator();
@@ -46,7 +46,7 @@ export default class App extends Component {
                 }} initialRouteName='Register'>
                     <Stack.Screen name="Register" component={Register} options={{ headerShown: false }} />
                     <Stack.Screen name="PhoneNumber" component={PhoneNumber} options={header} />
-                    <Stack.Screen name="OnboardingWelcomeSplash" component={OnboardingWelcomeSplash} options={header} />
+                    <Stack.Screen name="OnboardingGoSplash" component={OnboardingGoSplash} options={header} />
                     <Stack.Screen name="Onboarding" component={Onboarding} options={header} />
                     <Stack.Screen name="OnboardingLocation" component={OnboardingLocation} options={header} />
                     <Stack.Screen name="OnboardingSearchRelation" component={OnboardingSearchRelation} options={header} />
