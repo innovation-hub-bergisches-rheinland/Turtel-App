@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { StyleSheet, KeyboardAvoidingView, View, Text, SafeAreaView, Pressable, Image, Alert } from 'react-native';
+import React, { useState  } from 'react';
+import { StyleSheet, KeyboardAvoidingView, View, Text, SafeAreaView, Pressable, Image, Keyboard, TouchableWithoutFeedback} from 'react-native';
 import {InputOutline} from 'react-native-input-outline';
 import Camera from '../../../assets/images/camera.jsx';
 import OwnButton from '../Buttons/TurtelButton.js';
@@ -57,32 +57,36 @@ export function Onboarding({ navigation }) {
 
     return (
         <SafeAreaView style={style.pageStyle}>
-            <KeyboardAvoidingView style={{ alignItems: 'center' }} behavior={Platform.OS === "ios" ? "padding" : "height"}>
-                {image && <Image source={{ uri: image }} style={style.profilePicture} />}
-                <View style={{ justifyContent: 'center', height: '100%', top: "5%" }}>
-                    <Pressable onPress={pickImage}>
-                        <View style={style.imageContainer}>
-                            <View style={!image ? style.selectImage : style.imageSelected}>
-                                <Camera />
-                            </View>
-                            {!image && <Text style={{ textAlign: 'center' }}>Wähle ein Bild von Dir!</Text>}
-                        </View>
-                    </Pressable>
-                    <View style={!image ? style.inputContainer : style.inputContainerImageSelected}>
-                        <InputOutline placeholder='Name' style={style.input} onChangeText={newText => setName(newText) & setErrorName(undefined)} inactiveColor="#000" error={errorName} />
-                        <InputOutline placeholder='Geburtstag (TT/MM/JJJJ)' style={style.input}
-                            onChangeText={newText => setBirthday(newText) & setErrorBirthday(undefined)}
-                            inactiveColor="#000" error={errorBirthday} />
+            <KeyboardAvoidingView style={{alignItems: 'center'}} behavior={Platform.OS === "ios" ? "padding" : "height"} >
+                <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+                    <View style={{width: '100%', alignItems: 'center'}}>
+                        {image && <Image source={{ uri: image }} style={style.profilePicture} />}
+                        <View style={{ justifyContent: 'center', height: '100%', top: "5%" }}>
+                            <Pressable onPress={pickImage}>
+                                <View style={style.imageContainer}>
+                                    <View style={!image ? style.selectImage : style.imageSelected}>
+                                        <Camera />
+                                    </View>
+                                    {!image && <Text style={{ textAlign: 'center' }}>Wähle ein Bild von Dir!</Text>}
+                                </View>
+                            </Pressable>
+                            <View style={!image ? style.inputContainer : style.inputContainerImageSelected}>
+                                <InputOutline placeholder='Name' style={style.input} onChangeText={newText => setName(newText) & setErrorName(undefined)} inactiveColor="#000" error={errorName} />
+                                <InputOutline placeholder='Geburtstag (TT/MM/JJJJ)' style={style.input}
+                                    onChangeText={newText => setBirthday(newText) & setErrorBirthday(undefined)}
+                                    inactiveColor="#000" error={errorBirthday} />
 
-                        <View style={style.checkbuttonView}>
-                            <OwnCheckButton name="männlich" onPress={() => changeGender("male")} style={style.button} />
-                            <OwnCheckButton name="weiblich" onPress={() => changeGender("female")} style={style.button} />
-                            <OwnCheckButton name="anderes" onPress={() => changeGender("other")} style={style.button} />
+                                <View style={style.checkbuttonView}>
+                                    <OwnCheckButton name="männlich" onPress={() => changeGender("male")} style={style.button} />
+                                    <OwnCheckButton name="weiblich" onPress={() => changeGender("female")} style={style.button} />
+                                    <OwnCheckButton name="anderes" onPress={() => changeGender("other")} style={style.button} />
+                                </View>
+                                {hiddenGender && <InputOutline placeholder="Geschlecht" style={style.input} onChangeText={newText => setGender(newText)} inactiveColor={"#000"} />}
+                                <OwnButton name="Weiter" style={{ width: 256 }} onPress={checkInputs} />
+                            </View>
                         </View>
-                        {hiddenGender && <InputOutline placeholder="Geschlecht" style={style.input} onChangeText={newText => setGender(newText)} inactiveColor={"#000"} />}
-                        <OwnButton name="Weiter" style={{ width: 256 }} onPress={checkInputs} />
                     </View>
-                </View>
+                </TouchableWithoutFeedback>  
             </KeyboardAvoidingView>
         </SafeAreaView>
     );

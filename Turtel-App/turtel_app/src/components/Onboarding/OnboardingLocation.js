@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {StyleSheet, View, Text, TextInput, SafeAreaView, Alert} from 'react-native';
+import {StyleSheet, View, Text, TextInput, SafeAreaView, KeyboardAvoidingView, Keyboard, TouchableWithoutFeedback} from 'react-native';
 import {InputOutline} from 'react-native-input-outline';
 import OwnButton from '../Buttons/TurtelButton.js';
 import DropDownPicker from 'react-native-dropdown-picker';
@@ -22,25 +22,30 @@ export function  OnboardingLocation({ navigation }) {
 
     return (
         <SafeAreaView style={style.pageStyle}>
-            <Text style={style.textStyle}>Ich wohne in</Text>
-            <InputOutline placeholder='Stadt/Ort' style={style.input} onChangeText={newText => setCity(newText)}/>
-            <Text style={style.textStyle}>Ich möchte Menschen kennenlernen, die nicht weiter entfernt wohnen, als</Text>
-            
-            <DropDownPicker 
-                placeholder='Entfernung'
-                open={open}
-                dropDownContainerStyle={style.containerStyle}
-                value={areacode}
-                items={items}
-                setOpen={setOpen}
-                setValue={setAreacode}
-                setItems={setItems}
-                style={style.input}
-            />
-            
-            <OwnButton name="Weiter" onPress={() => navigation.navigate(OnboardingSearchRelation)} />
+            <KeyboardAvoidingView style={{alignItems: 'center'}} behavior={Platform.OS === "ios" ? "padding" : "height"} >
+                <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+                    <View style={{width: '100%', alignItems: 'center'}}>
+                        <Text style={style.textStyle}>Ich wohne in</Text>
+                        <InputOutline placeholder='Stadt/Ort' style={style.input} onChangeText={newText => setCity(newText)}/>
+                        <Text style={style.textStyle}>Ich möchte Menschen kennenlernen, die nicht weiter entfernt wohnen, als</Text>
+                        
+                        <DropDownPicker 
+                            placeholder='Entfernung'
+                            open={open}
+                            dropDownContainerStyle={style.containerStyle}
+                            value={areacode}
+                            items={items}
+                            setOpen={setOpen}
+                            setValue={setAreacode}
+                            setItems={setItems}
+                            style={style.input}
+                        />
+                        
+                        <OwnButton name="Weiter" onPress={() => navigation.navigate(OnboardingSearchRelation)} />
+                    </View>
+                </TouchableWithoutFeedback>  
+            </KeyboardAvoidingView>
         </SafeAreaView>
-        
     );
 }
 
